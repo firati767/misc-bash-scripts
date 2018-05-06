@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# This script prints a formatted "ASCII table" to the console.
+# This was written on and for Mac OS's Terminal. YYMV.
+
+# These set the colors for various
+# categories of codes. You may need
+# (or want) to adjust them. Check
+# your terminals documentation.
+default="\\e[38;5;120m"
+letter="\\e[38;5;226m"
+number="\\e[38;5;14m"
+control="\\e[38;5;248m"
+
+printf "${control}0x00  NULL  Null character                ${control}0x10  DLE   Data link escape\n"
+printf "${control}0x01  SOH   Start of header               ${control}0x11  DC1   Device control 1\n"
+printf "${control}0x02  STX   Start of text                 ${control}0x12  DC2   Device control 2\n"
+printf "${control}0x03  ETX   End of text                   ${control}0x13  DC3   Device control 3\n"
+printf "${control}0x04  EOT   End of transmission           ${control}0x14  DC4   Device control 4\n"
+printf "${control}0x05  ENQ   Enquiry                       ${control}0x15  NAK   Negative acknowledgement\n"
+printf "${control}0x06  ACK   Acknowledgement               ${control}0x16  SYN   Synchronous idle\n"
+printf "${control}0x07  BEL   Bell \\\\a                       ${control}0x17  ETB   End of transmission block\n"
+printf "${control}0x08  BS    Backspace \\\\b                  ${control}0x18  CAN   Cancel\n"
+printf "${control}0x09  HT    Horizontal tab \\\\t             ${control}0x19  EM    End of medium\n"
+printf "${default}0x0a  LF    Line feed \\\\n                 ${control}0x1a  SUB   Substitute\n"
+printf "${control}0x0b  VT    Vertical tab \\\\v               ${control}0x1b  ESC   Escape \\\\e\n"
+printf "${control}0x0c  FF    Form feed                     ${control}0x1c  FS    File separator\n"
+printf "${default}0x0d  CR    Carriage return \\\\r            ${control}0x1d  GS    Group separator\n"
+printf "${control}0x0e  SO    Shift out                     ${control}0x1e  RS    Record separator\n"
+printf "${control}0x0f  SI    Shift in                      ${control}0x1f  US    Unit separator\n"
+printf "${default}32  0x20         ${number}48  0x30  0      ${default}64  0x40  @      ${letter}80  0x50  P      ${default}96   0x60  \`      ${letter}112  0x70  p\n"
+printf "${default}33  0x21  !      ${number}49  0x31  1      ${letter}65  0x41  A      ${letter}81  0x51  Q      ${letter}97   0x61  a      ${letter}113  0x71  q\n"
+printf "${default}34  0x22  \"      ${number}50  0x32  2      ${letter}66  0x42  B      ${letter}82  0x52  R      ${letter}98   0x62  b      ${letter}114  0x72  r\n"
+printf "${default}35  0x23  #      ${number}51  0x33  3      ${letter}67  0x43  C      ${letter}83  0x53  S      ${letter}99   0x63  c      ${letter}115  0x73  s\n"
+printf "${default}36  0x24  $      ${number}52  0x34  4      ${letter}68  0x44  D      ${letter}84  0x54  T      ${letter}100  0x64  d      ${letter}116  0x74  t\n"
+printf "${default}37  0x25  %%      ${number}53  0x35  5      ${letter}69  0x45  E      ${letter}85  0x55  U      ${letter}101  0x65  e      ${letter}117  0x75  u\n"
+printf "${default}38  0x26  &      ${number}54  0x36  6      ${letter}70  0x46  F      ${letter}86  0x56  V      ${letter}102  0x66  f      ${letter}118  0x76  v\n"
+printf "${default}39  0x27  '      ${number}55  0x37  7      ${letter}71  0x47  G      ${letter}87  0x57  W      ${letter}103  0x67  g      ${letter}119  0x77  w\n"
+printf "${default}40  0x28  (      ${number}56  0x38  8      ${letter}72  0x48  H      ${letter}88  0x58  X      ${letter}104  0x68  h      ${letter}120  0x78  x\n"
+printf "${default}41  0x29  )      ${number}57  0x39  9      ${letter}73  0x49  I      ${letter}89  0x59  Y      ${letter}105  0x69  i      ${letter}121  0x79  y\n"
+printf "${default}42  0x2a  *      ${default}58  0x3a  :      ${letter}74  0x4a  J      ${letter}90  0x5a  Z      ${letter}106  0x6a  j      ${letter}122  0x7a  z\n"
+printf "${default}43  0x2b  +      ${default}59  0x3b  ;      ${letter}75  0x4b  K      ${default}91  0x5b  [      ${letter}107  0x6b  k      ${default}123  0x7b  {\n"
+printf "${default}44  0x2c  ,      ${default}60  0x3c  <      ${letter}76  0x4c  L      ${default}92  0x5c  \      ${letter}108  0x6c  l      ${default}124  0x7c  |\n"
+printf "${default}45  0x2d  -      ${default}61  0x3d  =      ${letter}77  0x4d  M      ${default}93  0x5d  ]      ${letter}109  0x6d  m      ${default}125  0x7d  }\n"
+printf "${default}46  0x2e  .      ${default}62  0x3e  >      ${letter}78  0x4e  N      ${default}94  0x5e  ^      ${letter}110  0x6e  n      ${default}126  0x7e  ~\n"
+printf "${default}47  0x2f  /      ${default}63  0x3f  ?      ${letter}79  0x4f  O      ${default}95  0x5f  _      ${letter}111  0x6f  o      ${default}127  0x7f  DEL\n"
+
+# This should return the color your default setting.
+printf "\\e[39m"
